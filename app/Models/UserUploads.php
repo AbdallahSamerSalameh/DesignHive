@@ -22,8 +22,8 @@ class UserUploads extends Model
 
  
 
-    public function post()
+    public function projects()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Project::class);
     }
 }

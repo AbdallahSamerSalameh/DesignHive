@@ -14,7 +14,9 @@ class SubscriptionPlans extends Model
         'name',
         'price',
         'duration',
-        'max_uploads'
+        'type',
+        'can_contact_designer',
+        'featured_post',
     ];
     public function subscriptions()
     {

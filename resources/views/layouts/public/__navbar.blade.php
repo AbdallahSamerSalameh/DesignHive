@@ -10,7 +10,7 @@
                     <input type="text" placeholder="Search..." class="form-control">
                     <button type="submit" class="btn"><i class="bi bi-search"></i></button>
                 </form>
-                <a href="{{ url('/login') }}" class="btn ms-4 rounded-pill px-4 py-2" style="background-color: #D8B6A4;">Login</a>
+                <a href="{{ url('/login') }}" class="btn ms-4 rounded-pill px-4 py-2" style="background-color: #D8B6A4; color: white;">Login</a>
             </div>
         </div>
     </div>

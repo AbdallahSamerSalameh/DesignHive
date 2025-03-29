@@ -53,9 +53,9 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function posts()
+    public function projects()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Project::class);
     }
 
     public function likes()
@@ -90,5 +90,9 @@ class User extends Authenticatable
     public function uploads()
     {
         return $this->hasMany(UserUploads::class);
+    }
+    public function tags()
+    {
+        return $this->hasMany(Tag::class);
     }
 }

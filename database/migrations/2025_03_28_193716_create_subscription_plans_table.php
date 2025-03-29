@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->decimal('price', 10, 2);
             $table->enum('duration', ['monthly', 'yearly']);
-            $table->integer('max_uploads');
+            $table->enum('type', ['user', 'designer', 'designer_featured']);
+            $table->boolean('can_contact_designer')->default(false);
+            $table->boolean('featured_post')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });

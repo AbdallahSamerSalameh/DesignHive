@@ -16,7 +16,7 @@ class Subscription extends Model
         'start_date',
         'end_date',
         'status',
-        'remiaining_uploads'
+        
         
     ];
 
@@ -27,6 +27,6 @@ class Subscription extends Model
 
     public function subscriptionPlan()
     {
-        return $this->belongsTo(SubscriptionPlans::class);  
+        return $this->belongsTo(SubscriptionPlans::class , 'plan_id');  
     }
 }

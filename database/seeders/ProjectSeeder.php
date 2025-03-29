@@ -2,17 +2,18 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\SubscriptionPlans;
 
-class SubscriptionPlansSeeder extends Seeder
+class ProjectSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        SubscriptionPlans::factory(3)->create();
+        Project::factory(10)->create();
+
     }
 }

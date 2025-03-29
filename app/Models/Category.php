@@ -16,9 +16,9 @@ class Category extends Model
         'admin_id'
     ];
 
-    public function posts()
+    public function projects()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Project::class);
     }
 
     public function admin()

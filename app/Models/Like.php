@@ -11,7 +11,7 @@ class Like extends Model
     use HasFactory;
 
     protected $fillable = [
-        'post_id',
+        'project_id',
         'user_id'
     ];
 
@@ -20,8 +20,8 @@ class Like extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function post()
+    public function projects()
     {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Project::class);
     }
 }

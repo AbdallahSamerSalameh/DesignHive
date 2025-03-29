@@ -11,15 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subscriptions', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
+            $table->enum('format', ['PNG', 'JPG'])->nullable();
+            $table->integer('likes_count')->default(0);
+            $table->integer('comments_count')->default(0);
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('plan_id');
-            $table->foreign('plan_id')->references('id')->on('subscription_plans')->onDelete('cascade');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subscriptions');
+        Schema::dropIfExists('projects');
     }
 };

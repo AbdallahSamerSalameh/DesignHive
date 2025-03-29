@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Tag extends Model
 {
-    /** @use HasFactory<\Database\Factories\CommentFactory> */
+    /** @use HasFactory<\Database\Factories\TagFactory> */
     use HasFactory;
 
     protected $fillable = [
+        'name',
         'user_id',
-        'project_id',
-        'content'
     ];
 
 
@@ -24,6 +23,6 @@ class Comment extends Model
 
     public function projects()
     {
-        return $this->belongsTo(Project::class);
+        return $this->belongsToMany(Project::class, 'project_tags', 'tag_id', 'project_id')->withTimestamps();
     }
 }

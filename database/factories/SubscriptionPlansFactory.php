@@ -20,7 +20,9 @@ class SubscriptionPlansFactory extends Factory
             'name' => fake()->name(),
             'price' => fake()->randomFloat(2, 5, 500), 
             'duration' => fake()->randomElement(['monthly', 'yearly']), 
-            'max_uploads' => fake()->numberBetween(5, 100), 
+            'type' => fake()->randomElement(['user', 'designer', 'designer_featured']),
+            'can_contact_designer' => fake()->boolean(),
+            'featured_post' => fake()->boolean(),
         ];
     }
 }

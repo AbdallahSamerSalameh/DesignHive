@@ -22,7 +22,7 @@ class SubscriptionFactory extends Factory
             'start_date' => fake()->date(),
             'end_date' => fake()->date(),
             'status' => fake()->randomElement(['active', 'inactive']),
-            'remaining_uploads' => fake()->numberBetween(1,30),
+            
             
         ];
     }

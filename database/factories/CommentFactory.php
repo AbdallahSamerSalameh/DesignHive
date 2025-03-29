@@ -18,7 +18,7 @@ class CommentFactory extends Factory
     {
         return [
             'user_id' => fake()->numberBetween(1,10),
-            'post_id' => fake()->numberBetween(1,10),
+            'project_id' => fake()->numberBetween(1,10),
             'content' => fake()->sentence(),
         ];
     }
