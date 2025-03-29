@@ -21,6 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'provider',
+        'provider_id',
     ];
 
     /**
@@ -44,5 +46,49 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+    public function subscriptions()
+    {
+        return $this->hasMany(Subscription::class);
+    }
+
+    public function messagesSent()
+    {
+        return $this->hasMany(Message::class, 'sender_id');
+    }
+
+    public function messagesReceived()
+    {
+        return $this->hasMany(Message::class, 'receiver_id');
+    }
+
+    public function uploads()
+    {
+        return $this->hasMany(UserUploads::class);
     }
 }

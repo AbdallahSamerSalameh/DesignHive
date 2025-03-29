@@ -2,7 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
+use App\Models\Category;
+use App\Models\Profile;
+use App\Models\Subscription;
 use App\Models\User;
+use Dom\Comment;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,9 +20,20 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+
+        $this->call([
+            AdminSeeder::class,
+            CategorySeeder::class,
+            CommentSeeder::class,
+            LikeSeeder::class,
+            MessageSeeder::class,
+            PaymentSeeder::class,
+            PostSeeder::class,
+            ProfileSeeder::class,
+            SubscriptionSeeder::class,
+            SubscriptionPlansSeeder::class,
+            UserSeeder::class,
+            UserUploadsSeeder::class,
         ]);
     }
 }
