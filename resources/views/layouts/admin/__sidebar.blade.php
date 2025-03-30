@@ -25,24 +25,51 @@
     <li class="nav-item {{ Request::is('admin/categories') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="{{ url('/admin/categories') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Category</span>
+            <span>Admins</span>
         </a>
     </li>
 
     <li class="nav-item {{ Request::is('admin/posts') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="{{ url('/admin/posts') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Posts</span>
+            <span>Users</span>
         </a>
     </li>
 
     <li class="nav-item {{ Request::is('admin/posts') ? 'active' : '' }}">
         <a class="nav-link collapsed" href="{{ url('/admin/posts') }}">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Posts</span>
+            <span>Subscriptions</span>
         </a>
     </li>
 
+    <li class="nav-item {{ Request::is('admin/posts') ? 'active' : '' }}">
+        <a class="nav-link collapsed" href="{{ url('/admin/posts') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Payments</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ Request::is('admin/posts') ? 'active' : '' }}">
+        <a class="nav-link collapsed" href="{{ url('/admin/posts') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Projects</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ Request::is('admin/posts') ? 'active' : '' }}">
+        <a class="nav-link collapsed" href="{{ url('/admin/posts') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Comments</span>
+        </a>
+    </li>
+
+    <li class="nav-item {{ Request::is('admin/posts') ? 'active' : '' }}">
+        <a class="nav-link collapsed" href="{{ url('/admin/posts') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Categories</span>
+        </a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
