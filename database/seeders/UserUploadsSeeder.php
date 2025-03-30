@@ -14,6 +14,6 @@ class UserUploadsSeeder extends Seeder
      */
     public function run(): void
     {
-        UserUploads::factory(10)->create();
+        UserUploads::factory(40)->create();
     }
 }
