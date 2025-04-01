@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Payment;
-use App\Http\Requests\StorePaymentRequest;
-use App\Http\Requests\UpdatePaymentRequest;
+use App\Models\User;
+use Illuminate\Http\Request;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 
-class PaymentController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class PaymentController extends Controller
     public function index()
     {
         //
-        $payments = Payment::all(); // Fetch all payments
-        return view('admin.payments.index', compact('payments'));
+        $users = User::all(); // Fetch all users
+        return view('admin.users.index', compact('users'));
     }
 
     /**
@@ -29,7 +30,7 @@ class PaymentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePaymentRequest $request)
+    public function store(StoreUserRequest $request)
     {
         //
     }
@@ -37,16 +38,16 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Payment $payment)
+    public function show(User $user)
     {
         //
-        return view('admin.payments.show', compact('payment'));
+        return view('admin.users.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Payment $payment)
+    public function edit(User $user)
     {
         //
     }
@@ -54,7 +55,7 @@ class PaymentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePaymentRequest $request, Payment $payment)
+    public function update(UpdateUserRequest $request, User $user)
     {
         //
     }
@@ -62,7 +63,7 @@ class PaymentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Payment $payment)
+    public function destroy(User $user)
     {
         //
     }

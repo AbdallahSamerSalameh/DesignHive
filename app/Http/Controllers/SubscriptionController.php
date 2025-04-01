@@ -14,6 +14,8 @@ class SubscriptionController extends Controller
     public function index()
     {
         //
+        $subscriptions = Subscription::with(['user', 'subscriptionPlan'])->get(); // Fetch subscriptions with related user and plan
+        return view('admin.subscriptions.index', compact('subscriptions'));
     }
 
     /**
@@ -38,6 +40,7 @@ class SubscriptionController extends Controller
     public function show(Subscription $subscription)
     {
         //
+        return view('admin.subscriptions.show', compact('subscription'));
     }
 
     /**

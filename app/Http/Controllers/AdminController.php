@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use App\Http\Requests\StoreAdminRequest;
 use App\Http\Requests\UpdateAdminRequest;
+use Illuminate\Support\Facades\Hash;
+
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -14,6 +18,9 @@ class AdminController extends Controller
     public function index()
     {
         //
+        // $admins = Admin::all();
+        $admins = Admin::whereNull('deleted_at')->get(); // Exclude soft-deleted records
+        return view('admin.admins.index', compact('admins'));
     }
 
     /**
@@ -22,6 +29,7 @@ class AdminController extends Controller
     public function create()
     {
         //
+        return view('admin.admins.create');
     }
 
     /**
@@ -30,6 +38,26 @@ class AdminController extends Controller
     public function store(StoreAdminRequest $request)
     {
         //
+        // when login & register is done
+        //return to Update Admin Request.php File
+        //it is in the equests folder
+        //and return the edited line to flase please
+        //the same for the store method
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:admins,email',
+            'role' => 'required|string',
+            'password' => 'required|string|min:8', // Add validation for password
+        ]);
+    
+        Admin::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'role' => $request->input('role'),
+            'password' => Hash::make($request->input('password')), // Hash the password
+        ]);
+    
+        return redirect()->route('admins.index')->with('success', 'Admin created successfully.');
     }
 
     /**
@@ -38,6 +66,7 @@ class AdminController extends Controller
     public function show(Admin $admin)
     {
         //
+        return view('admin.admins.show', compact('admin'));
     }
 
     /**
@@ -46,14 +75,31 @@ class AdminController extends Controller
     public function edit(Admin $admin)
     {
         //
+        return view('admin.admins.edit', compact('admin'));
     }
 
     /**
      * Update the specified resource in storage.
      */
     public function update(UpdateAdminRequest $request, Admin $admin)
-    {
+        {
         //
+        // when login & register is done
+        //return to Update Admin Request.php File
+        //it is in the equests folder
+        //and return the edited line to flase please
+        //the same for the store method
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:admins,email,' . $admin->id,
+            'role' => 'required|string',
+        ]);
+    
+        $admin->update($request->all());
+        // dd($request->all());
+        // $admin->update($request->only(['name', 'email', 'role']));
+
+        return redirect()->route('admins.index')->with('success', 'Admin updated successfully.');    
     }
 
     /**
@@ -62,5 +108,16 @@ class AdminController extends Controller
     public function destroy(Admin $admin)
     {
         //
+        $admin->delete(); // Perform a soft delete
+        return redirect()->route('admins.index')->with('success', 'Admin deleted successfully.');
+    }
+
+    public function dashboard(){
+
+        // Temporarily bypass authentication check
+        $admin = (object) ['name' => 'Super Admin']; // Mock admin object
+        // $admin = Auth::guard('admin')->user();
+        // dd($admin);
+        return view('admin.dashboard', compact('admin'));
     }
 }

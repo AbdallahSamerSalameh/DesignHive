@@ -19,8 +19,9 @@ class CategoryFactory extends Factory
         return [
             
             'name' => fake()->name(),
-            'image' => fake()->imageUrl(800, 600, 'art', true),
+            'image' => 'https://picsum.photos/id/'.rand(100, 200).'/800/600',
             'format' => fake()->randomElement(['png', 'jpg']),
+            'description' => fake()->realText(),
             'admin_id' => fake()->numberBetween(1,2),
 
         ];
