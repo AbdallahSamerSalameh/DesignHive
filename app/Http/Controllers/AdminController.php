@@ -84,7 +84,7 @@ class AdminController extends Controller
     public function update(UpdateAdminRequest $request, Admin $admin)
         {
         //
-        // when login & register is done
+        //when login & register is done
         //return to Update Admin Request.php File
         //it is in the equests folder
         //and return the edited line to flase please

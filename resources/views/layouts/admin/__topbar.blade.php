@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
     <!-- Sidebar Toggle (Topbar) -->
-    <button id="sidebarToggleTop" class="btn d-md-none rounded-circle mr-3" style="color: #D8B6A4;">
+    <button id="sidebarToggleTop" class="btn d-md-none rounded-circle mr-3" style="color: #420363;">
         <i class="fa fa-bars"></i>
     </button>
 
@@ -12,7 +12,7 @@
             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button class="btn" style="background-color: #D8B6A4;" type="button">
+                <button class="btn" style="background-color: #420363;" type="button">
                     <i class="fas fa-search fa-sm" style="color: white;"></i>
                 </button>
             </div>
@@ -37,7 +37,7 @@
                             placeholder="Search for..." aria-label="Search"
                             aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                            <button class="btn" style="background-color: #D8B6A4; color: white;" type="button">
+                            <button class="btn" style="background-color: #420363; color: white;" type="button">
                                 <i class="fas fa-search fa-sm"></i>
                             </button>
                         </div>
