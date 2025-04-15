@@ -14,6 +14,6 @@ class ProjectTagsSeeder extends Seeder
      */
     public function run(): void
     {
-        ProjectTags::factory(15)->create();
+        ProjectTags::factory(10)->create();
     }
 }

@@ -1,102 +1,95 @@
-<footer id="footer" class="footer">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <img src="{{ asset('assets/img/DesignHive.png') }}" alt="DesignHive Logo" class="sitename">
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <!-- <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div> -->
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
-
+<footer class="footer bg-white border-top py-4">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 flex-wrap mb-3">
+      <a href="{{ route('home') }}">
+        <img src="{{ asset('assets/img/DesignHive.png') }}" alt="Logo" style="height: 40px;">
+      </a>
+      <ul class="list-unstyled d-flex flex-wrap gap-4 mb-0 fw-semibold">
+        <li><a href="#" class="text-dark text-decoration-none">For designers</a></li>
+        <li><a href="#" class="text-dark text-decoration-none">Inspiration</a></li>
+        <li><a href="#" class="text-dark text-decoration-none">Advertising</a></li>
+        <li><a href="{{ route('about') }}" class="text-dark text-decoration-none">About</a></li>
+        <li><a href="{{ route('contact') }}" class="text-dark text-decoration-none">Support</a></li>
+      </ul>
+      <div class="d-flex gap-3 fs-5">
+        <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="text-dark"><i class="bi bi-pinterest"></i></a>
       </div>
     </div>
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-muted small pt-3 ">
+      <div>© 2025 DesignHive</div>
+      <div class="d-flex flex-wrap gap-3">
+        <a href="#" class="text-muted text-decoration-none">Designers</a>
+        <a href="#" class="text-muted text-decoration-none">Freelancers</a>
+        <a href="#" class="text-muted text-decoration-none">Tags</a>
+        <a href="#" class="text-muted text-decoration-none">Places</a>
+        <a href="#" class="text-muted text-decoration-none">Resources</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<div id="preloader"></div>
+<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
+<script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+<script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+<script src="{{ asset('assets/js/main.js') }}"></script>
+<script src="{{ asset('assets/js/home.js') }}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".like-btn").forEach((button) => {
+      button.addEventListener("click", async function () {
+        let projectId = this.getAttribute("data-project-id");
+        let likeIcon = this.querySelector("i");
+        let likeCount = this.querySelector(".like-count");
 
-    <!-- <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Blogy</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-         All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-      <!-- </div> -->
-    <!-- </div>  -->
+        try {
+          let response = await fetch("{{ route('toggle.like') }}", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').getAttribute("content"),
+            },
+            body: JSON.stringify({
+              project_id: projectId,
+            }),
+          });
 
-  </footer>
+          let data = await response.json();
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+          if (data.liked) {
+            likeIcon.className = "bi bi-heart-fill fs-4 text-danger";
+          } else {
+            likeIcon.className = "bi bi-heart fs-4 text-muted";
+          }
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
-  <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
-  <script src="{{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-  <script src="{{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
-  <script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-
-  <!-- Main JS File -->
-  <script src="{{ asset('assets/js/main.js') }}"></script>
-
+          likeCount.textContent = data.likes_count;
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      });
+    });
+  });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const notificationBtn = document.querySelector('.btn[style*="background-color: #D8B6A4"]');
+        const dropdownMenu = document.getElementById('notificationsDropdown');
+        notificationBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+        document.addEventListener('click', function(e) {
+            if (!notificationBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+    });
+</script>
 </body>
-
 </html>

@@ -18,10 +18,13 @@ class ProfileFactory extends Factory
     {
         return [
             'user_id' => fake()->numberBetween(1,10),
-            'profile_picture' => 'https://randomuser.me/api/portraits/' . fake()->randomElement(['men', 'women']) . '/' . fake()->numberBetween(1, 99) . '.jpg',
+            'profile_picture' => fake()->imageUrl(640, 480, 'people'),
             'bio' => fake()->sentence(),
             'location' => fake()->city(),
-  
+            'facebook' => fake()->url(),
+            'twitter' => fake()->url(),
+            'linkedin' => fake()->url(),
+            'instagram' => fake()->url(),
         ];
     }
 }

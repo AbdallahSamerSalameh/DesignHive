@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('profile_picture')->nullable();
             $table->string('bio')->nullable();
             $table->string('location')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('instagram')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

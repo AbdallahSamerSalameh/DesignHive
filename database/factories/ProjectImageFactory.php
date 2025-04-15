@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\UserUploads>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ProjectImage>
  */
-class UserUploadsFactory extends Factory
+class ProjectImageFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class UserUploadsFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => fake()->numberBetween(1,10),
-            'project_id' => fake()->numberBetween(1,10),
-            
+            'image' => fake()->imageUrl(800, 600, 'art', true),
+            'project_id' => fake()->numberBetween(1, 10),
         ];
     }
 }

@@ -2,18 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use App\Models\UserUploads;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\ProjectImage;
 
-class UserUploadsSeeder extends Seeder
+class ProjectImageSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        UserUploads::factory(40)->create();
+        ProjectImage::factory(30)->create();
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Subscription;
 use App\Http\Requests\StoreSubscriptionRequest;
 use App\Http\Requests\UpdateSubscriptionRequest;
+use App\Models\SubscriptionPlans;
 
 class SubscriptionController extends Controller
 {
@@ -14,8 +15,8 @@ class SubscriptionController extends Controller
     public function index()
     {
         //
-        $subscriptions = Subscription::with(['user', 'subscriptionPlan'])->get(); // Fetch subscriptions with related user and plan
-        return view('admin.subscriptions.index', compact('subscriptions'));
+        $subscriptions = Subscription::with(['user', 'plan'])->get();
+        return view('admin.subscriptions.index' , compact('subscriptions'));
     }
 
     /**
@@ -40,7 +41,7 @@ class SubscriptionController extends Controller
     public function show(Subscription $subscription)
     {
         //
-        return view('admin.subscriptions.show', compact('subscription'));
+        return view('admin.subscriptions.show' , compact('subscription'));
     }
 
     /**
@@ -65,5 +66,12 @@ class SubscriptionController extends Controller
     public function destroy(Subscription $subscription)
     {
         //
+    }
+
+    public function indexPlans()
+    {
+        //
+        $plans = SubscriptionPlans::all();
+        return view('admin.subscriptions.plans-index' , compact('plans'));
     }
 }

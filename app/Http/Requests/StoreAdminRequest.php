@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreAdminRequest extends FormRequest
 {
@@ -11,9 +12,7 @@ class StoreAdminRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        // return false;
-        return true;
-
+        return Auth::guard('admin')->check() && Auth::guard('admin')->user()->role === 'superadmin';
     }
 
     /**

@@ -19,12 +19,9 @@ class ProjectFactory extends Factory
         return [
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
-            'image' => fake()->imageUrl(800, 600, 'art', true),
-            'format' => fake()->randomElement(['png', 'jpg']),
-            'likes_count' => fake()->numberBetween(0, 100),
-            'comments_count' => fake()->numberBetween(0, 100),
             'user_id' => fake()->numberBetween(1,10),
             'category_id' => fake()->numberBetween(1,10),
+            'featured_post' => fake()->boolean(),
         ];
     }
 }

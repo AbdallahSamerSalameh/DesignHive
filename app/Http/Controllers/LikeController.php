@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Like;
 use App\Http\Requests\StoreLikeRequest;
 use App\Http\Requests\UpdateLikeRequest;
+use Illuminate\Http\Request;
+use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
 
 class LikeController extends Controller
 {
@@ -63,4 +66,35 @@ class LikeController extends Controller
     {
         //
     }
+
+    public function toggleLike(Request $request)
+    {
+        $myuser = Auth::user();
+        if (!$myuser) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+        $user = $myuser->id;
+        $projectId = $request->project_id;
+
+        $like = Like::where('user_id', $user)->where('project_id', $projectId)->first();
+
+        if ($like) {
+            $like->delete();
+            $liked = false;
+        } else {
+            Like::create([
+                'user_id' => $user,
+                'project_id' => $projectId
+            ]);
+            $liked = true;
+        }
+
+        $likesCount = Like::where('project_id', $projectId)->count();
+
+        return response()->json([
+            'liked' => $liked,
+            'likes_count' => $likesCount
+        ]);
+    }
+
 }

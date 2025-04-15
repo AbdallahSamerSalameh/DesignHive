@@ -15,13 +15,12 @@ class Category extends Model
     protected $fillable = [
         'name',
         'image',
-        'description',
         'admin_id'
     ];
 
     public function projects()
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Project::class , 'category_id');
     }
 
     public function admin()

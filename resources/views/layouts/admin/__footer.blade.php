@@ -33,7 +33,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="{{ route('logoutusers') }}">Logout</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,39 @@
             }
         });
     </script>
-
+    <script>
+        function confirmDelete(categoryId) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Submit the hidden form
+                    document.getElementById(`delete-form-${categoryId}`).submit();
+                }
+            });
+        }
+    </script>
+    {{-- <script>
+        function confirmDelete(userId) {
+            if (confirm('Are you sure you want to delete this user?')) {
+                document.getElementById('delete-form-' + userId).submit();
+            }
+        }
+    </script>
+    <script>
+        function showDeleteConfirmation(projectId) {
+            if (confirm('Are you sure you want to delete this project? This action cannot be undone.')) {
+                // Submit the form if the user confirms
+                document.getElementById(`delete-form-${projectId}`).submit();
+            }
+        }
+    </script> --}}
 </body>
 
 </html>

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserUploads;
-use App\Http\Requests\StoreUserUploadsRequest;
-use App\Http\Requests\UpdateUserUploadsRequest;
+use App\Models\ProjectImage;
+use App\Http\Requests\StoreProjectImageRequest;
+use App\Http\Requests\UpdateProjectImageRequest;
 
-class UserUploadsController extends Controller
+class ProjectImageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class UserUploadsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreUserUploadsRequest $request)
+    public function store(StoreProjectImageRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class UserUploadsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(UserUploads $userUploads)
+    public function show(ProjectImage $projectImage)
     {
         //
     }
@@ -43,7 +43,7 @@ class UserUploadsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(UserUploads $userUploads)
+    public function edit(ProjectImage $projectImage)
     {
         //
     }
@@ -51,7 +51,7 @@ class UserUploadsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUserUploadsRequest $request, UserUploads $userUploads)
+    public function update(UpdateProjectImageRequest $request, ProjectImage $projectImage)
     {
         //
     }
@@ -59,7 +59,7 @@ class UserUploadsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(UserUploads $userUploads)
+    public function destroy(ProjectImage $projectImage)
     {
         //
     }

@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
+use App\Models\ProjectImage;
 use App\Models\User;
-use App\Models\UserUploads;
 use Illuminate\Auth\Access\Response;
 
-class UserUploadsPolicy
+class ProjectImagePolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class UserUploadsPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, UserUploads $userUploads): bool
+    public function view(User $user, ProjectImage $projectImage): bool
     {
         return false;
     }
@@ -35,7 +35,7 @@ class UserUploadsPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, UserUploads $userUploads): bool
+    public function update(User $user, ProjectImage $projectImage): bool
     {
         return false;
     }
@@ -43,7 +43,7 @@ class UserUploadsPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, UserUploads $userUploads): bool
+    public function delete(User $user, ProjectImage $projectImage): bool
     {
         return false;
     }
@@ -51,7 +51,7 @@ class UserUploadsPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, UserUploads $userUploads): bool
+    public function restore(User $user, ProjectImage $projectImage): bool
     {
         return false;
     }
@@ -59,7 +59,7 @@ class UserUploadsPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, UserUploads $userUploads): bool
+    public function forceDelete(User $user, ProjectImage $projectImage): bool
     {
         return false;
     }

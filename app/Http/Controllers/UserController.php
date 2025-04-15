@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-
 class UserController extends Controller
 {
     /**
@@ -65,6 +63,21 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete(); // Perform a soft delete
+        return redirect()->route('users.index')->with('success', 'User deleted successfully.');
+    }
+
+    public function deleted(){
+        $users = User::onlyTrashed()->get(); // Fetch all soft-deleted users
+        return view('admin.users.deleted', compact('users'));
+    }
+
+    public function restore(User $user){
+        $user->restore(); // Restore the soft-deleted user
+        return redirect()->route('users.deleted')->with('success', 'User restored successfully.');
+    }
+
+    public function showDeleted(User $user){
+        return view('admin.users.showdeleted', compact('user')); // Return the view with the user data
     }
 }

@@ -26,7 +26,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-black-300"></i>
+                            <i class="fas fa-calendar fa-2x text-black-300" style="color: #6f2d93"></i>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-black-300"></i>
+                            <i class="fas fa-dollar-sign fa-2x text-black-300" style="color: #6f2d93"></i>
                         </div>
                     </div>
                 </div>
@@ -65,15 +65,15 @@
                                 </div>
                                 <div class="col">
                                     <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar"
-                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                        <div class="progress-bar" role="progressbar"
+                                            style="width: 50%; background:#803ea4" aria-valuenow="50" aria-valuemin="0"
                                             aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-black-300"></i>
+                            <i class="fas fa-clipboard-list fa-2x text-black-300"  style="color: #6f2d93"></i>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                             <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-black-300"></i>
+                            <i class="fas fa-comments fa-2x text-black-300" style="color: #6f2d93"></i>
                         </div>
                     </div>
                 </div>

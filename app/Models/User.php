@@ -4,9 +4,9 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
@@ -51,7 +51,7 @@ class User extends Authenticatable
 
     public function profile()
     {
-        return $this->hasOne(Profile::class);
+        return $this->hasOne(Profile::class, 'user_id');
     }
 
     public function projects()
@@ -73,9 +73,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Payment::class);
     }
-    public function subscriptions()
+
+    public function subscription()
     {
-        return $this->hasMany(Subscription::class);
+        return $this->hasOne(Subscription::class);
     }
 
     public function messagesSent()
@@ -88,12 +89,8 @@ class User extends Authenticatable
         return $this->hasMany(Message::class, 'receiver_id');
     }
 
-    public function uploads()
+    public function projectTags()
     {
-        return $this->hasMany(UserUploads::class);
-    }
-    public function tags()
-    {
-        return $this->hasMany(Tag::class);
+        return $this->hasMany(ProjectTags::class);
     }
 }

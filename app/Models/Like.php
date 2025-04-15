@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Like extends Model
 {
@@ -20,8 +21,17 @@ class Like extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function projects()
+    public function project()
     {
         return $this->belongsTo(Project::class);
+    }
+
+    protected static function booted()
+    {
+        static::addGlobalScope('excludeSoftDeletedUsers', function (Builder $builder) {
+            $builder->whereHas('user', function ($query) {
+                $query->whereNull('deleted_at');
+            });
+        });
     }
 }
